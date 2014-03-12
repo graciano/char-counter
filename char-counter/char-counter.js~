@@ -1,5 +1,4 @@
-function charCounter(parameters){
-    var seletorCount = parameters.seletorCount;
+$.fn.charCounter = function (parameters){
     var seletorWarn = parameters.seletorWarn;
     var warnText = parameters.warnText;
     var MAX = parameters.maximum;
@@ -10,12 +9,11 @@ function charCounter(parameters){
     if(!warnText){
         warnText = "";
     }
-    //cont = $(seletorCount).val().length;
-    $(seletorCount).on('keyup keydown change', function(){
-        cont = $(seletorCount).val().length;
+    $(this).on('keyup keydown change', function(){
+        cont = $(this).val().length;
         $(seletorWarn).text(cont);
         $(seletorWarn).css('color',blueToRedSmoothTransition(cont/MAX));
-        if(cont>=MAX) {
+        if(cont>MAX) {
             $(seletorWarn).text(cont+" "+warnText);
         }
 

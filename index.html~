@@ -15,11 +15,10 @@
         <script type='text/javascript' src="char-counter/char-counter.js"></script>
         <!--now you can use it, this way:-->
         <script>
-            charCounter({
-                seletorCount: "#description", //required, this is the seletor for a jquery function
-                seletorWarn: "#warn-max", //required, just like the seletorCount
-                maximum: 100, //not required, default is 140, like twitter =)
-                warnText: "You've reached the maximum of characters!"
+            $("#description").charCounter({
+                seletorWarn: "#warn-max", //required, this is the seletor for the warn element
+                maximum: 300, //not required, default is 140, like twitter =)
+                warnText: "You've reached the maximum of characters!"//not required, this is a text to put after the number when the maximum is reached
             });
         </script>
     </body>

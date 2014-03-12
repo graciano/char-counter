@@ -13,7 +13,7 @@ $.fn.charCounter = function (parameters){
         cont = $(this).val().length;
         $(seletorWarn).text(cont);
         $(seletorWarn).css('color',blueToRedSmoothTransition(cont/MAX));
-        if(cont>=MAX) {
+        if(cont>MAX) {
             $(seletorWarn).text(cont+" "+warnText);
         }
 
